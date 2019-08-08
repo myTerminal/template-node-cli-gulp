@@ -1,0 +1,42 @@
+{
+  "name": "template-cli",
+  "version": "0.9.0",
+  "description": "template-cli",
+  "bin": {
+    "template-primary": "bin/template-cli-primary.js",
+    "template-secondary": "bin/template-cli-secondary.js"
+  },
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:myTerminal/template-cli-gulp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/myTerminal/template-cli-gulp/issues"
+  },
+  "homepage": "https://github.com/myTerminal/template-cli-gulp#readme",
+  "keywords": [
+    "template"
+  ],
+  "author": "Mohammed Ismail Ansari <team.terminal@gmail.com>",
+  "license": "CC-BY-NC-SA-4.0",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-eslint": "10.0.1",
+    "babel-preset-env": "1.7.0",
+    "del": "3.0.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-jsx-a11y": "6.2.0",
+    "eslint-plugin-react": "7.12.4",
+    "gulp": "4.0.0",
+    "gulp-babel": "7.0.1",
+    "gulp-concat": "2.6.1",
+    "gulp-eslint": "5.0.0",
+    "gulp-sourcemaps": "2.6.4",
+    "gulp-uglify": "3.0.1"
+  }
+}

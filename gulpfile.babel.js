@@ -6,7 +6,6 @@ const libraryFileName = 'template-cli',
 
 const gulp = require('gulp'),
     del = require('del'),
-    gulpConcat = require('gulp-concat'),
     gulpSourceMaps = require('gulp-sourcemaps'),
     gulpBabel = require('gulp-babel'),
     gulpUglify = require('gulp-uglify'),
@@ -16,41 +15,18 @@ const clean = (done) => {
     return del([outputDir], done);
 };
 
-const scriptsPrimaryDebug = () =>
-    gulp.src(sourceDir + '/' + libraryFileName + '-primary.js')
+const scriptsDebug = () =>
+    gulp.src(sourceDir + '/**/*.js')
         .pipe(gulpSourceMaps.init())
         .pipe(gulpBabel())
         .pipe(gulpSourceMaps.write('.'))
         .pipe(gulp.dest(outputDir + '/'));
 
-const scriptsSecondaryDebug = () =>
-    gulp.src(sourceDir + '/' + libraryFileName + '-secondary.js')
-        .pipe(gulpSourceMaps.init())
-        .pipe(gulpBabel())
-        .pipe(gulpSourceMaps.write('.'))
-        .pipe(gulp.dest(outputDir + '/'));
-
-const scriptsDebug = gulp.parallel(
-    scriptsPrimaryDebug,
-    scriptsSecondaryDebug
-);
-
-const scriptsPrimary = () =>
-    gulp.src(sourceDir + '/' + libraryFileName + '-primary.js')
+const scripts = () =>
+    gulp.src(sourceDir + '/**/*.js')
         .pipe(gulpBabel())
         .pipe(gulpUglify())
         .pipe(gulp.dest(outputDir + '/'));
-
-const scriptsSecondary = () =>
-    gulp.src(sourceDir + '/' + libraryFileName + '-secondary.js')
-        .pipe(gulpBabel())
-        .pipe(gulpUglify())
-        .pipe(gulp.dest(outputDir + '/'));
-
-const scripts = gulp.parallel(
-    scriptsPrimary,
-    scriptsSecondary
-);
 
 const lint = () =>
     gulp.src(sourceDir + '/**/*.js')

@@ -1,0 +1,1 @@
+"use strict";module.exports.log=function(o){console.log("Log: "+o)};

@@ -11,25 +11,25 @@ const gulp = require('gulp'),
     gulpUglify = require('gulp-uglify'),
     gulpEslint = require('gulp-eslint');
 
-const clean = (done) => {
+const clean = done => {
     return del([outputDir], done);
 };
 
 const scriptsDebug = () =>
-    gulp.src(sourceDir + '/**/*.js')
+    gulp.src(`${sourceDir}/**/*.js`)
         .pipe(gulpSourceMaps.init())
         .pipe(gulpBabel())
         .pipe(gulpSourceMaps.write('.'))
         .pipe(gulp.dest(outputDir + '/'));
 
 const scripts = () =>
-    gulp.src(sourceDir + '/**/*.js')
+    gulp.src(`${sourceDir}/**/*.js`)
         .pipe(gulpBabel())
         .pipe(gulpUglify())
         .pipe(gulp.dest(outputDir + '/'));
 
 const lint = () =>
-    gulp.src(sourceDir + '/**/*.js')
+    gulp.src(`${sourceDir}/**/*.js`)
         .pipe(gulpEslint())
         .pipe(gulpEslint.format())
         .pipe(gulpEslint.failAfterError());
@@ -48,7 +48,7 @@ const build = gulp.series(
 const develop = () => {
     gulp.watch(
         [
-            sourceDir + '/**/*.js'
+            `${sourceDir}/**/*.js`
         ],
         scriptsDebug
     );
@@ -59,6 +59,6 @@ export {
     build,
     develop,
     lint
-}
+};
 
 export default build;

@@ -19,13 +19,13 @@ const scriptsDebug = () =>
         .pipe(gulpSourceMaps.init())
         .pipe(gulpBabel())
         .pipe(gulpSourceMaps.write('.'))
-        .pipe(gulp.dest(outputDir + '/'));
+        .pipe(gulp.dest(`${outputDir}/`));
 
 const scripts = () =>
     gulp.src(`${sourceDir}/**/*.js`)
         .pipe(gulpBabel())
         .pipe(gulpUglify())
-        .pipe(gulp.dest(outputDir + '/'));
+        .pipe(gulp.dest(`${outputDir}/`));
 
 const lint = () =>
     gulp.src(`${sourceDir}/**/*.js`)
@@ -49,7 +49,10 @@ const develop = () => {
         [
             `${sourceDir}/**/*.js`
         ],
-        scriptsDebug
+        gulp.series(
+            scriptsDebug,
+            lint
+        )
     );
 };
 

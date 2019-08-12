@@ -1,7 +1,6 @@
 /* global require */
 
-const libraryFileName = 'template-cli',
-    sourceDir = 'src',
+const sourceDir = 'src',
     outputDir = 'bin';
 
 const gulp = require('gulp'),

@@ -1,27 +1,28 @@
 {
-  "name": "template-cli",
+  "name": "template-node-cli",
   "version": "0.9.0",
-  "description": "template-cli",
+  "description": "template-node-cli",
   "bin": {
-    "template-primary": "bin/template-cli-primary.js",
-    "template-secondary": "bin/template-cli-secondary.js"
+    "template-primary": "bin/template-node-cli-primary.js",
+    "template-secondary": "bin/template-node-cli-secondary.js"
   },
   "scripts": {
     "gulp": "gulp"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:myTerminal/template-cli-gulp.git"
+    "url": "git@github.com:myTerminal/template-node-cli-gulp.git"
   },
   "bugs": {
-    "url": "https://github.com/myTerminal/template-cli-gulp/issues"
+    "url": "https://github.com/myTerminal/template-node-cli-gulp/issues"
   },
-  "homepage": "https://github.com/myTerminal/template-cli-gulp#readme",
+  "homepage": "https://github.com/myTerminal/template-node-cli-gulp#readme",
   "keywords": [
     "template"
   ],
   "author": "Mohammed Ismail Ansari <team.terminal@gmail.com>",
   "license": "CC-BY-NC-SA-4.0",
+  "preferGlobal": "true",
   "dependencies": {},
   "devDependencies": {
     "babel-core": "6.26.3",

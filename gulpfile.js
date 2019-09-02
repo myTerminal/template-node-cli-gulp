@@ -1,4 +1,4 @@
-/* global require */
+/* global require module */
 
 const sourceDir = 'src',
     outputDir = 'bin';
@@ -56,11 +56,10 @@ const develop = () => {
     );
 };
 
-export {
+module.exports = {
     debug,
     build,
     develop,
-    lint
+    lint,
+    default: build
 };
-
-export default build;

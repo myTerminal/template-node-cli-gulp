@@ -1,4 +1,4 @@
 version: "2"
 exclude_patterns:
 - "bin"
-- "gulpfile.babel.js"
+- "gulpfile.js"

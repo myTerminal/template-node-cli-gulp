@@ -6,6 +6,9 @@
     "template-primary": "bin/template-node-cli-primary.js",
     "template-secondary": "bin/template-node-cli-secondary.js"
   },
+  "files": [
+    "/bin"
+  ],
   "scripts": {
     "gulp": "gulp"
   },
